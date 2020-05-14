@@ -4,7 +4,7 @@ What's your name?
 Jonas
 
 What do you study (or hope to study)?
-Toxicology of chemical threat ageInts
+Toxicology of chemical threat agents
 
 What's one interesting fact about you? 
 I love studying mushrooms
