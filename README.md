@@ -9,6 +9,7 @@ What's your name?
 Jonas
 
 What do you study (or hope to study)?
+Toxicology of chemical threat ageInts
 
 What's one interesting fact about you? 
 I love studying mushrooms
