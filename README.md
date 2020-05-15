@@ -9,5 +9,5 @@ Toxicology of chemical threat agents
 What's one interesting fact about you? 
 I love studying mushrooms 
 
-![Mouse Model of DFP-induced SE](images/directory_mouse_model.png)  
+![Mouse Model of DFP-induced SE](images/20200505_193700.jpg)  
 
