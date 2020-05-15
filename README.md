@@ -9,5 +9,5 @@ Toxicology of chemical threat agents
 What's one interesting fact about you? 
 I love studying mushrooms 
 
-![filename image](images/directory_mouse_model - 1.png)  
+![filename image](~/images/directory_mouse_model - 1.png)  
 
