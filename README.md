@@ -1,8 +1,3 @@
----
-output:
-  word_document: default
-  html_document: default
----
 Welcome, Dragons, to R-DAVIS 2020! 
 
 What's your name? 
@@ -14,5 +9,5 @@ Toxicology of chemical threat agents
 What's one interesting fact about you? 
 I love studying mushrooms 
 
-![Mouse Model of DFP-induced SE](images/directory_mouse_model - 1.png)  
+![Mouse Model of DFP-induced SE](images/directory_mouse_model.png)  
 
