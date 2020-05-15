@@ -1,3 +1,8 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
 Welcome, Dragons, to R-DAVIS 2020! 
 
 What's your name? 
