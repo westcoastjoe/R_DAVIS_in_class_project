@@ -17,3 +17,18 @@ plus10 <- times3 + 10
 #problem 3: select every other number in the plus10 list
 plus10[c(TRUE, FALSE)]
 
+length[plus10(c(TRUE, FALSE))]
+
+hw4 <- hw3[complete.cases(hw3)]
+
+hw4[hw4 <= 38 & hw4 >= 14]
+
+prob1 <- hw4[hw4 <= 38 & hw4 >= 14]
+
+length(prob1)
+
+times3 <- prob1 * 3
+
+plus10 <- times3 + 10
+
+plus10[c(TRUE, FALSE)]
