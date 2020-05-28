@@ -5,7 +5,7 @@ surveys <- read_csv("data/raw_data/portal_data_joined.csv")
 
 #Subset surveys to keep rows with weight between 30 and 60, and print out the first 6 rows.
 surveys %>% 
-  filter(weight > 30) %>% 
+  filter(weight > 30) %>% #can also be done like filter(weight > 30 & weight < 60)
   filter(weight < 60) %>% 
   head()
 
