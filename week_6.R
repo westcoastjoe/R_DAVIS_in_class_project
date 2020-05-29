@@ -65,3 +65,20 @@ surveys_complete %>%
   geom_jitter(alpha = 0.1, color = "tomato") +
   geom_boxplot()
   
+#challenge 2
+surveys_complete %>% 
+  ggplot(mapping = aes(x = species_id, y = weight)) +
+  geom_jitter(alpha = 0.1, color = "tomato") +
+  geom_violin(alpha = 0) +
+  scale_y_log10()
+
+surveys_complete %>% 
+  filter(species_id == "NL" | species_id == "PF") %>% 
+ggplot(mapping = aes(x = species_id, y = hindfoot_length)) +
+  geom_jitter(alpha = 0.3, aes(color = as.factor(plot_id))) +
+  geom_boxplot(alpha = 0)
+
+
+
+
+  
