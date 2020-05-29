@@ -24,6 +24,23 @@ ggplot(data = gapminder, mapping = aes(x = year, y = mean_lifeExp,)) +
   geom_point(aes(x = year, y = mean_lifeExp, color = continent)) +
   geom_line(aes(x = year, y = mean_lifeExp, color = continent))
  
+#how they answered in class:
+gapminder %>% 
+  group_by(continent, year) %>% 
+  summarise(mean_lifeExp = mean(lifeExp)) %>% 
+  ggplot(mapping = aes(x = year, y = mean_lifeExp, color = continent)) +
+  geom_point() +
+  geom_line()
+
+#how to rename legend title
+gapminder %>% 
+  rename(Continent = continent) %>% 
+  group_by(Continent, year) %>% 
+  summarise(mean_lifeExp = mean(lifeExp)) %>% 
+  ggplot(mapping = aes(x = year, y = mean_lifeExp, color = Continent)) +
+  geom_point() +
+  geom_line()
+
 
 #Problem 2.
 #Look at the following code and answer the following questions. What do you think the scale_x_log10() line of code is achieving? What about the geom_smooth() line of code?
