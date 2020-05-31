@@ -49,3 +49,41 @@ ggplot(data = yearly_counts_sex, mapping = aes(x = year, y = n, color = sex)) +
 
 library(cowplot)
 
+plot_diamonds <- diamonds %>% 
+  ggplot(aes(x = clarity, fill = cut)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 70, vjust = 0.5))
+
+plot_cars <- mtcars %>% 
+  ggplot(aes(x = wt, y = mpg, color = factor(cyl))) +
+  geom_point(size = 2) +
+  theme_minimal()
+
+plot_diamonds
+
+plot_cars2 <- mpg %>% 
+  ggplot(aes(x = cty, y = hwy, color = manufacturer)) +
+  geom_point()
+
+#now use cowplot to stitch them together
+library(cowplot)
+plot_grid(plot_cars, plot_diamonds, plot_cars2, labels = c("A", "B", "C"), ncol = 2, nrow = 2)
+
+#plotly for interactive plots
+library(plotly)
+
+
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "lm", aes(group = factor(cyl), color = factor(cyl)))#add factor to make it a variable rather than a continuous scale
+#this is what happens without the factor designation, R thinks there are 5 and 7 cylinder engines too:
+plot1_plots
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "lm", aes(group = cyl, color = cyl))
+
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "lm", aes(group = factor(cyl), color = factor(cyl)))+
+  theme(axis.title.x = element_text(size = 25))
+              
