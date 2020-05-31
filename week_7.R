@@ -1,4 +1,5 @@
 #welcome to week 7
+library(tidyverse)
 
 #load survey data in
 surveys_complete <- read_csv("data/raw_data/portal_data_joined.csv") %>% 
@@ -40,5 +41,11 @@ ggplot(data = yearly_counts_sex, mapping = aes(x = year, y = n)) +
 
 ggplot(data = yearly_counts_sex, mapping = aes(x = year, y = n, color = sex)) +
   geom_line() + 
-  facet_wrap(~ species_id)
+  facet_wrap(~ species_id) +
+  theme_minimal()
+
+#visualizations dos and don't
+#intro to publishing plots with cowplot
+
+library(cowplot)
 
