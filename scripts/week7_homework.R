@@ -56,5 +56,27 @@ continents_final <- left_join(continents_2002, continents_2007, by = "country") 
   xlab("Country")+
     ylab("Change in Population Between 2002 and 2007")
 
-  #ok this is the best I can do for now, I can't get the geom_bar to work for the bar graph
+  #ok this is the best I can do for now, I can't get the geom_bar to work for the bar graph. turned out I needed to use geom_col
+
+  #this is how they did it.
+  gapminder <- read_csv("data/raw_data/gapminder.csv")
+  
+  pg <- gapminder %>% 
+    select(country, year, pop, continent) %>% 
+    filter(year %in% c(2002, 2007)) %>% #or %in% 2002:2007, or just simply year > 2000 for this data set
+    pivot_wider(names_from = year, values_from = pop) %>% 
+    mutate(pop_growth_0207 = (`2007` - `2002`))#NOTE this is a backtick, not an apostrophe!!!!!!******
+
+  pg %>% 
+    filter(continent != "Oceania") %>% 
+    ggplot(aes(x = reorder(country, pop_growth_0207), y = pop_growth_0207)) +
+    geom_col(aes(fill = continent)) +
+    facet_wrap(vars(continent), scales = "free") +
+    theme_bw()+
+    scale_fill_viridis_d() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+          legend.position = "none") +
+    xlab("Country") +
+    ylab("Yearly Pop Growth Between 2002 and 2007")
+    
 
